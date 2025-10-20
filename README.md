@@ -1,1 +1,1 @@
-# WebApplicationsAGH
+# Repozytorium do zajęć z WDAI 2025
