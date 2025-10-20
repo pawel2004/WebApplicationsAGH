@@ -1,0 +1,45 @@
+.grid-container {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto;
+}
+
+.grid-container div {
+    width: 100px;
+    height: 100px;
+}
+
+.red {
+    background-color: red;
+}
+
+.green {
+    background-color: green;
+}
+
+.blue {
+    background-color: blue;
+}
+
+.yellow {
+    background-color: yellow;
+}
+
+.embedded-image {
+    background-color: lightblue;
+    background-image: url(../img/pendulum.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.first-row {
+    grid-row: 1;
+}
+
+.second-row {
+    grid-row: 2;
+}
