@@ -1,0 +1,64 @@
+@use 'constants';
+@use 'color_scheme';
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    scroll-behavior: smooth;
+    font-family: "Montserrat", sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+.container>* {
+    width: 100%;
+    padding: constants.$padding;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    height: constants.$header-height;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    background-color: color_scheme.$bg-color;
+
+    img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+    }
+
+    nav {
+        ul {
+            display: flex;
+            flex-flow: row nowrap;
+            gap: constants.$nav-gap;
+            list-style-type: none;
+        }
+
+        a {
+            color: color_scheme.$text-color;
+            text-decoration: none;
+        }
+    }
+}
+
+main {
+    section {
+        scroll-margin-top: constants.$header-height;
+    }
+}
+
+footer {
+    text-align: center;
+}
