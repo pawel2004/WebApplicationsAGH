@@ -27,28 +27,64 @@ header {
     top: 0;
     height: constants.$header-height;
     display: flex;
-    flex-flow: row nowrap;
+    flex-flow: column nowrap;
     justify-content: space-between;
     align-items: center;
     background-color: color_scheme.$bg-color;
 
-    img {
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
+    div {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        width: 100%;
+
+        img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+
+        button {
+            display: block;
+        }
     }
 
     nav {
         ul {
             display: flex;
-            flex-flow: row nowrap;
             gap: constants.$nav-gap;
+            flex-flow: column nowrap;
             list-style-type: none;
+            visibility: hidden;
         }
 
         a {
             color: color_scheme.$text-color;
             text-decoration: none;
+        }
+    }
+}
+
+@media only screen and (min-width: constants.$tablet-width) {
+    header {
+        flex-flow: row nowrap;
+
+        div {
+            flex: 1;
+
+            button {
+                display: none;
+            }
+        }
+
+        nav {
+            flex: 3;
+
+            ul {
+                flex-flow: row nowrap;
+                justify-content: flex-end;
+                visibility: visible;
+            }
         }
     }
 }

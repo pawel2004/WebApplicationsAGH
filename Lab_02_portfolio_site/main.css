@@ -23,27 +23,56 @@ header {
   top: 0;
   height: 56px;
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: column nowrap;
   justify-content: space-between;
   align-items: center;
   background-color: #fff;
 }
-header img {
+header div {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  width: 100%;
+}
+header div img {
   width: 40px;
   height: 40px;
   border-radius: 50%;
 }
+header div button {
+  display: block;
+}
 header nav ul {
   display: flex;
-  flex-flow: row nowrap;
   gap: 16px;
+  flex-flow: column nowrap;
   list-style-type: none;
+  visibility: hidden;
 }
 header nav a {
   color: #000;
   text-decoration: none;
 }
 
+@media only screen and (min-width: 768px) {
+  header {
+    flex-flow: row nowrap;
+  }
+  header div {
+    flex: 1;
+  }
+  header div button {
+    display: none;
+  }
+  header nav {
+    flex: 3;
+  }
+  header nav ul {
+    flex-flow: row nowrap;
+    justify-content: flex-end;
+    visibility: visible;
+  }
+}
 main section {
   scroll-margin-top: 56px;
 }
