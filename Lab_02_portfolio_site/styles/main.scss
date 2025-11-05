@@ -47,15 +47,32 @@ header {
             border-radius: 50%;
         }
 
-        button {
-            width: 40px;
-            height: 40px;
-            display: block;
-            background-image: url('assets/menu_icon.svg');
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: contain;
-            border: none;
+        div {
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: flex-end;
+
+            .open-menu-bt {
+                width: 40px;
+                height: 40px;
+                display: block;
+                background-image: url('assets/menu_icon_light.svg');
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: contain;
+                border: none;
+            }
+
+            .change-theme-bt {
+                width: 40px;
+                height: 40px;
+                display: block;
+                background-image: url('assets/light_mode.svg');
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: contain;
+                border: none;
+            }
         }
     }
 
@@ -113,6 +130,11 @@ footer {
 }
 
 @include color_scheme.make-themes (color_scheme.$themes) {
+    .container {
+        background-color: color_scheme.get-color("bg-color");
+        color: color_scheme.get-color("text-color");
+    }
+
     header {
         background-color: color_scheme.get-color("bg-color");
     }
@@ -126,6 +148,10 @@ footer {
     }
 
     .nav-menu {
+        background-color: color_scheme.get-color("bg-color");
+    }
+
+    .change-theme-bt {
         background-color: color_scheme.get-color("bg-color");
     }
 }
