@@ -29,19 +29,20 @@
 header {
     position: sticky;
     top: 0;
-    height: constants.$header-height;
     display: flex;
-    flex-flow: column nowrap;
-    justify-content: space-between;
+    flex-flow: row nowrap;
+    justify-content: center;
     align-items: center;
 
-    div {
-        display: flex;
-        flex-flow: row nowrap;
-        justify-content: space-between;
+    nav {
         width: 100%;
+        height: constants.$nav-height;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
 
         img {
+            display: block;
             width: 40px;
             height: 40px;
             border-radius: 50%;
@@ -74,15 +75,13 @@ header {
                 border: none;
             }
         }
-    }
-
-    nav {
-        width: 100%;
 
         ul {
+            width: 100%;
             display: flex;
             gap: constants.$nav-gap;
             flex-flow: column nowrap;
+            justify-content: flex-end;
             align-items: center;
             list-style-type: none;
             visibility: hidden;
@@ -97,20 +96,17 @@ header {
 
 @media only screen and (min-width: constants.$tablet-width) {
     header {
-        flex-flow: row nowrap;
-
-        div {
-            flex: 1;
-
-            button {
-                display: none;
-            }
-        }
-
         nav {
-            flex: 3;
+            div {
+                order: 2;
+
+                .open-menu-bt {
+                    display: none;
+                }
+            }
 
             ul {
+                flex: 3;
                 flex-flow: row nowrap;
                 justify-content: flex-end;
                 visibility: visible;
