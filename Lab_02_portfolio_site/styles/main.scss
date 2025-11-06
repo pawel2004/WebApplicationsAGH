@@ -49,6 +49,7 @@ header {
         }
 
         div {
+            padding-left: constants.$padding;
             display: flex;
             flex-flow: row nowrap;
             justify-content: flex-end;
@@ -57,6 +58,7 @@ header {
                 width: 40px;
                 height: 40px;
                 display: block;
+                border-radius: constants.$light-round;
                 background-image: url('assets/menu_icon_light.svg');
                 background-position: center;
                 background-repeat: no-repeat;
@@ -68,6 +70,7 @@ header {
                 width: 40px;
                 height: 40px;
                 display: block;
+                border-radius: constants.$light-round;
                 background-image: url('assets/light_mode.svg');
                 background-position: center;
                 background-repeat: no-repeat;
@@ -79,17 +82,18 @@ header {
         ul {
             width: 100%;
             display: flex;
-            gap: constants.$nav-gap;
             flex-flow: column nowrap;
             justify-content: flex-end;
             align-items: center;
             list-style-type: none;
             visibility: hidden;
-            padding: constants.$padding;
         }
 
         a {
+            border-radius: constants.$light-round;
             text-decoration: none;
+            display: block;
+            padding: constants.$padding;
         }
     }
 }
@@ -139,8 +143,24 @@ footer {
         color: color_scheme.get-color("text-color");
     }
 
+    .nav-link:hover {
+        background-color: color_scheme.get-color("fa-color");
+    }
+
+    .nav-link:active {
+        background-color: color_scheme.get-color("sa-color");
+    }
+
     .open-menu-bt {
         background-color: color_scheme.get-color("bg-color");
+    }
+
+    .open-menu-bt:hover {
+        background-color: color_scheme.get-color("fa-color");
+    }
+
+    .open-menu-bt:active {
+        background-color: color_scheme.get-color("sa-color");
     }
 
     .nav-menu {
@@ -149,5 +169,13 @@ footer {
 
     .change-theme-bt {
         background-color: color_scheme.get-color("bg-color");
+    }
+
+    .change-theme-bt:hover {
+        background-color: color_scheme.get-color("fa-color");
+    }
+
+    .change-theme-bt:active {
+        background-color: color_scheme.get-color("sa-color");
     }
 }
