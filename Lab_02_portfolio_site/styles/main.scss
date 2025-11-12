@@ -98,6 +98,31 @@ header {
     }
 }
 
+.gallery {
+    display: flex;
+    flex-flow: row wrap;
+    gap: constants.$gallery-gap;
+    justify-content: center;
+
+    a {
+        display: block;
+        width: constants.$gallery-cell-width;
+        height: constants.$gallery-cell-height;
+        overflow: hidden;
+        background-color: color_scheme.$white;
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+
+        video {
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+
 @media only screen and (min-width: constants.$tablet-width) {
     header {
         nav {
