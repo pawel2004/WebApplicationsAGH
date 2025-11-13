@@ -25,8 +25,8 @@ navigationButton.addEventListener('click', toggleNavbar);
 
 changeThemeButton.addEventListener('click', () => toggleTheme(document.body.classList[0] == 'light' ? 'dark' : 'light'));
 
-navigationLinks.forEach((e) => {
-    e.addEventListener('click', toggleNavbar);
+navigationLinks.forEach((link) => {
+    link.addEventListener('click', toggleNavbar);
 });
 
 if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
