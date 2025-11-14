@@ -28,7 +28,9 @@
     padding: constants.$padding;
 }
 
-.visible {
+.nav-visible {
+    height: constants.$mobile-nav-height;
+    min-height: constants.$mobile-nav-height;
     visibility: visible;
 }
 
@@ -55,6 +57,7 @@ header {
         display: flex;
         flex-flow: row wrap;
         justify-content: space-between;
+        align-items: center;
 
         img {
             display: block;
@@ -93,15 +96,22 @@ header {
 
         ul {
             width: 100%;
+            padding-top: constants.$padding;
+            padding-bottom: constants.$padding;
             display: flex;
             flex-flow: column nowrap;
             justify-content: flex-end;
-            align-items: center;
+            align-items: stretch;
             list-style-type: none;
             visibility: hidden;
+            overflow: hidden;
+            height: 0px;
+            min-height: 0px;
+            transition: height 0.5s, min-height 0.5s, visibility 0.5s;
         }
 
         a {
+            text-align: center;
             border-radius: constants.$light-round;
             text-decoration: none;
             display: block;
@@ -235,6 +245,8 @@ header {
                 flex-flow: row nowrap;
                 justify-content: flex-end;
                 visibility: visible;
+                max-height: max-content;
+                height: max-content;
             }
         }
     }

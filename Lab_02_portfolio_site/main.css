@@ -24,7 +24,9 @@
   padding: 8px;
 }
 
-.visible {
+.nav-visible {
+  height: 156px;
+  min-height: 156px;
   visibility: visible;
 }
 
@@ -51,6 +53,7 @@ header nav {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
+  align-items: center;
 }
 header nav img {
   display: block;
@@ -84,14 +87,21 @@ header nav div .change-theme-bt {
 }
 header nav ul {
   width: 100%;
+  padding-top: 8px;
+  padding-bottom: 8px;
   display: flex;
   flex-flow: column nowrap;
   justify-content: flex-end;
-  align-items: center;
+  align-items: stretch;
   list-style-type: none;
   visibility: hidden;
+  overflow: hidden;
+  height: 0px;
+  min-height: 0px;
+  transition: height 0.5s, min-height 0.5s, visibility 0.5s;
 }
 header nav a {
+  text-align: center;
   border-radius: 5px;
   text-decoration: none;
   display: block;
@@ -208,6 +218,8 @@ header nav a {
     flex-flow: row nowrap;
     justify-content: flex-end;
     visibility: visible;
+    max-height: max-content;
+    height: max-content;
   }
 }
 main section {

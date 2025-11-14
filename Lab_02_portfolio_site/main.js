@@ -4,8 +4,10 @@ const navigation = document.getElementById('nav-menu');
 const navigationLinks = document.querySelectorAll('.nav-link');
 const gitHubLogo = document.getElementById('github-logo');
 
-const toggleNavbar = () => {
-    navigation.classList.toggle('visible');
+const removeNavVisibleClass = () => {
+    if (navigation.classList.contains('nav-visible')) {
+        navigation.classList.remove('nav-visible');
+    }
 }
 
 const toggleTheme = (theme) => {
@@ -24,12 +26,12 @@ const toggleTheme = (theme) => {
     }
 }
 
-navigationButton.addEventListener('click', toggleNavbar);
+navigationButton.addEventListener('click', () => navigation.classList.toggle('nav-visible'));
 
 changeThemeButton.addEventListener('click', () => toggleTheme(document.body.classList[0] == 'light' ? 'dark' : 'light'));
 
 navigationLinks.forEach((link) => {
-    link.addEventListener('click', toggleNavbar);
+    link.addEventListener('click', removeNavVisibleClass);
 });
 
 if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
@@ -39,3 +41,9 @@ if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
 window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
     toggleTheme(e.matches ? 'dark' : 'light');
 });
+
+window.addEventListener('resize', () => {
+    if (window.innerWidth >= 768) {
+        removeNavVisibleClass();
+    }
+})
