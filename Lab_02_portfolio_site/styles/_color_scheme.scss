@@ -20,9 +20,8 @@ $themes: (
 
 @mixin make-themes ($themes) {
     @each $name, $values in $themes {
-        $theme-map: $values !global;
-
         .#{$name} {
+            $theme-map: $values !global;
             @content;
         }
     }

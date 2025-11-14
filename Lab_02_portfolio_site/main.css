@@ -34,8 +34,8 @@ h1,
 h2,
 h3,
 #contact form {
-  padding-top: 8px;
-  padding-bottom: 8px;
+  padding-top: 16px;
+  padding-bottom: 16px;
 }
 
 header {
@@ -175,6 +175,7 @@ header nav a {
 
 #contact form button {
   font-weight: bold;
+  transition: all 0.25s;
 }
 
 #contact form textarea {
@@ -199,8 +200,8 @@ header nav a {
 #contact .link-container #github-logo {
   background-image: url("assets/github_mark_white.svg");
 }
-#contact .link-container #gitlab-logo {
-  background-image: url("assets/gitlab_logo.svg");
+#contact .link-container #mail-logo {
+  background-image: url("assets/mail_light.svg");
 }
 #contact .link-container #linkedin-logo {
   background-image: url("assets/LI_In_logo.png");
@@ -220,6 +221,7 @@ header nav a {
     visibility: visible;
     max-height: max-content;
     height: max-content;
+    padding: 0;
   }
 }
 main section {

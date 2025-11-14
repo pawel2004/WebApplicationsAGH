@@ -38,8 +38,8 @@ h1,
 h2,
 h3,
 #contact form {
-    padding-top: constants.$padding;
-    padding-bottom: constants.$padding;
+    padding-top: 16px;
+    padding-bottom: 16px;
 }
 
 header {
@@ -194,6 +194,7 @@ header {
 
 #contact form button {
     font-weight: bold;
+    transition: all constants.$hover-transition-time;
 }
 
 #contact form textarea {
@@ -220,8 +221,8 @@ header {
         background-image: url('assets/github_mark_white.svg');
     }
 
-    #gitlab-logo {
-        background-image: url('assets/gitlab_logo.svg');
+    #mail-logo {
+        background-image: url('assets/mail_light.svg');
     }
 
     #linkedin-logo {
@@ -247,6 +248,7 @@ header {
                 visibility: visible;
                 max-height: max-content;
                 height: max-content;
+                padding: 0;
             }
         }
     }

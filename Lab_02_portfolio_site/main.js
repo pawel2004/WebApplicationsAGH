@@ -3,6 +3,8 @@ const changeThemeButton = document.getElementById('change-theme')
 const navigation = document.getElementById('nav-menu');
 const navigationLinks = document.querySelectorAll('.nav-link');
 const gitHubLogo = document.getElementById('github-logo');
+const mailLogo = document.getElementById('mail-logo');
+const tabletWidth = 768;
 
 const removeNavVisibleClass = () => {
     if (navigation.classList.contains('nav-visible')) {
@@ -17,12 +19,14 @@ const toggleTheme = (theme) => {
         navigationButton.style.backgroundImage = 'url("assets/menu_icon_dark.svg")';
         changeThemeButton.style.backgroundImage = 'url("assets/dark_mode.svg")';
         gitHubLogo.style.backgroundImage = 'url(assets/github_mark_dark.svg)';
+        mailLogo.style.backgroundImage = 'url(assets/mail_dark.svg)';
     } else {
         document.body.classList.remove('dark');
         document.body.classList.add('light');
         navigationButton.style.backgroundImage = 'url("assets/menu_icon_light.svg")';
         changeThemeButton.style.backgroundImage = 'url("assets/light_mode.svg")';
         gitHubLogo.style.backgroundImage = 'url(assets/github_mark_white.svg)';
+        mailLogo.style.backgroundImage = 'url(assets/mail_light.svg)';
     }
 }
 
@@ -43,7 +47,7 @@ window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e)
 });
 
 window.addEventListener('resize', () => {
-    if (window.innerWidth >= 768) {
+    if (window.innerWidth >= tabletWidth) {
         removeNavVisibleClass();
     }
 })
