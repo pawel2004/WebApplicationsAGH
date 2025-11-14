@@ -163,6 +163,42 @@ header {
     border-radius: constants.$light-round;
 }
 
+#contact form button {
+    font-weight: bold;
+}
+
+#contact form textarea {
+    height: 400px;
+}
+
+#contact .link-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+
+    a {
+        display: block;
+        width: constants.$gallery-cell-width;
+        height: constants.$gallery-cell-width;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+
+    #github-logo {
+        background-image: url('assets/github_mark_white.svg');
+    }
+
+    #gitlab-logo {
+        background-image: url('assets/gitlab_logo.svg');
+    }
+
+    #linkedin-logo {
+        background-image: url('assets/LI_In_logo.png');
+    }
+}
+
 @media only screen and (min-width: constants.$tablet-width) {
     header {
         nav {
@@ -184,7 +220,7 @@ header {
     }
 
     #contact form * {
-        width: 50%;
+        width: 70%;
     }
 }
 
@@ -264,5 +300,22 @@ footer {
     .gallery a p {
         background-color: rgba($color: color_scheme.get-color("fa-color"), $alpha: 0.75);
         color: color_scheme.get-color("text-color");
+    }
+
+    #contact form * {
+        border: constants.$form-input-border solid color_scheme.get-color("fa-color");
+    }
+
+    #contact form button {
+        color: color_scheme.get-color("text-color");
+        background-color: color_scheme.get-color("bg-color");
+    }
+
+    #contact form button:hover {
+        background-color: color_scheme.get-color("fa-color");
+    }
+
+    #contact form button:active {
+        background-color: color_scheme.get-color("sa-color");
     }
 }
